@@ -1,0 +1,6 @@
+framework module TYSMKit {
+  umbrella header "TYSMKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "TYSMKit",
+  "version": "0.1.0",
+  "summary": "A short description of TYSMKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/cookies-J/TYSMKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "cookies-J": "cooljele@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/cookies-J/TYSMKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TYSMKit/Classes/**/*"
+}
