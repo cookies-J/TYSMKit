@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TYSMKit'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'Thank you so much.'
 
 # This description is used to generate tags and improve search results.
@@ -39,4 +39,5 @@ take me down to the paradise city where the grass is green and the girls are pre
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'CocoaLumberjack'
 end
