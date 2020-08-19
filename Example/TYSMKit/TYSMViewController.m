@@ -7,6 +7,7 @@
 //
 
 #import "TYSMViewController.h"
+#import <TYSMKit/TYSMLogManager.h>
 
 @interface TYSMViewController ()
 
@@ -17,7 +18,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [[TYSMLogManager sharedManager] startLogger];
+    DDLogInfo(@"%@",self);
+    DDLogError(@"%@",self);
+    DDLogVerbose(@"%@",self);
+    DDLogWarn(@"%@",self);
+    
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -25,5 +32,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

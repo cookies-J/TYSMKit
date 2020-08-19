@@ -7,8 +7,9 @@
 //
 
 @import UIKit;
-
-@interface TYSMAppDelegate : UIResponder <UIApplicationDelegate>
+#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CLLocation.h>
+@interface TYSMAppDelegate : UIResponder <UIApplicationDelegate,CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

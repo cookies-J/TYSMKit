@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TYSMKit'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'Thank you so much.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ take me down to the paradise city where the grass is green and the girls are pre
   s.source           = { :git => 'https://github.com/cookies-J/TYSMKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'TYSMKit/Classes/**/*'
   
@@ -36,8 +36,13 @@ take me down to the paradise city where the grass is green and the girls are pre
   #   'TYSMKit' => ['TYSMKit/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking'
+  s.dependency 'YYKit'
+  s.dependency 'SDWebImage'
   s.dependency 'CocoaLumberjack'
+  s.dependency 'XMLDictionary'
+  s.dependency 'DateTools'
+  s.dependency 'FCFileManager'
 end

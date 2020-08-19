@@ -4,7 +4,8 @@ platform :ios, '8.0'
 
 target 'TYSMKit_Example' do
   pod 'TYSMKit', :path => '../'
-
+#  pod 'TYSMKit'
+  
   target 'TYSMKit_Tests' do
     inherit! :search_paths
 

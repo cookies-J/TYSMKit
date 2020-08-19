@@ -30,7 +30,7 @@
             loglevel = @"[VBOSE]==>";
             break;
     }
-    NSString *resultString = [NSString stringWithFormat:@"%@ %@___line[%ld]__%@", loglevel, logMessage->_function, logMessage->_line, logMessage->_message];
+    NSString *resultString = [NSString stringWithFormat:@"%@ %@___line[%zu]__%@", loglevel, logMessage->_function, logMessage->_line, logMessage->_message];
     return resultString;
 }
 

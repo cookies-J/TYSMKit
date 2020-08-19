@@ -8,10 +8,13 @@
 
 @import UIKit;
 #import "TYSMAppDelegate.h"
-
+#import "TYSMApplication.h"
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TYSMAppDelegate class]));
+        return UIApplicationMain(argc, argv,
+                                 NSStringFromClass([TYSMApplication class]),
+                                 NSStringFromClass([TYSMAppDelegate class])
+                                 );
     }
 }

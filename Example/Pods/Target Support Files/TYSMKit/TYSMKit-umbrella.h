@@ -10,6 +10,11 @@
 #endif
 #endif
 
+#import "TYSMLogFormatter.h"
+#import "TYSMLogManager.h"
+#import "TYSMSpeedTest.h"
+#import "TYSMConstraintsHeader.h"
+#import "TYSMKit.h"
 
 FOUNDATION_EXPORT double TYSMKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char TYSMKitVersionString[];

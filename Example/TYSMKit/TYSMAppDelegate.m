@@ -8,12 +8,70 @@
 
 #import "TYSMAppDelegate.h"
 
+@interface TYSMAppDelegate ()
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@end
+
 @implementation TYSMAppDelegate
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey,id> *)launchOptions {
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    if ([launchOptions.allKeys containsObject:UIApplicationLaunchOptionsLocationKey]) {
+//        [self.locationManager requestWhenInUseAuthorization];
+        
+    }
+    
+
+    switch ([CLLocationManager authorizationStatus]) {
+
+        case kCLAuthorizationStatusNotDetermined:
+            [self.locationManager requestAlwaysAuthorization];
+            break;
+        case kCLAuthorizationStatusRestricted:
+            
+            break;
+        case kCLAuthorizationStatusDenied:
+            
+            break;
+        case kCLAuthorizationStatusAuthorizedAlways:
+            [self.locationManager startMonitoringVisits];
+            break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            [self.locationManager startMonitoringVisits];
+            break;
+    };
     return YES;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didVisit:(CLVisit *)visit {
+    NSLog(@"%@",manager.location);
+    
+    NSLog(@"%.f %.f", visit.coordinate.latitude, visit.coordinate.longitude);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
+    NSLog(@"%@",manager.location);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"%@",error);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    NSLog(@"%@",manager.location);
+}
+
+- (CLLocationManager *)locationManager {
+    if (_locationManager == nil) {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+    }
+    return _locationManager;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -42,5 +100,21 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
+    [coder encodeObject:@"0.0.1" forKey:@"lastVersion"];
+    return YES;
+    
+}
+- (BOOL)application:(UIApplication *)application shouldRestoreSecureApplicationState:(NSCoder *)coder {
+    
+    NSString *lastVersion = [coder decodeObjectForKey:@"lastVersion"];
+    
+    if ([lastVersion isEqualToString:@"0.0.1"]) {
+        return YES;
+    }
+    return NO;
+}
+
 
 @end

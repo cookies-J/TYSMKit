@@ -8,5 +8,7 @@
 #ifndef TYSMKit_h
 #define TYSMKit_h
 
+#import "TYSMLogFormatter.h"
+#import "TYSMLogManager.h"
 
 #endif /* TYSMKit_h */
